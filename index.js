@@ -1,6 +1,5 @@
 var OpenWeatherKey = 'ede211c9afc45826594bb0936d9d5b9c';
 
-//var City = 'Decatur';
 var City = 'http://freegeoip.net/json/';
 
 function getLocation() {
@@ -36,23 +35,18 @@ function getWeather(url) {
 	});
 }
 
-
+var tempMeasure = true;
 function toggleTempMeasurement() {
-	var current_choice = document.getElementById('temp_measure')
-	if (current_choice.innerHTML == "&#8451;") {
+	if (tempMeasure == false) {
 		current_choice.innerHTML = "&#8457;";
-		console.log("&#8457;");
+		tempMeasure = true;
 	} else {
 		current_choice.innerHTML = "&#8451;";
-		console.log("&#8451;");
+		tempMeasure = false;
 	}
 }
 
 getLocation();
 
-
-// $('#temp').html(temp);
-// $('#desc').html(desc);
-// $('#wind').html(wind);
 // //filling the image src attribute with the image url
 // $('#img').attr('src', img);

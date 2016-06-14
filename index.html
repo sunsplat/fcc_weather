@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weather in my Town</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -14,25 +15,27 @@
   <body>
   	<div class="container">
   		<div class="row">
-  			<div class="col-md-offset-2 col-md-8 text-center">
-
+  			<div class="col-md-4 text-center location">
 				  <div id="forecast">
-				<h1>Weather at <span id="location"> </span></h1>
-				<div id="imgdiv">
-				<img id="img" src=""/>
+						<h1>Weather at <span id="location"> </span></h1>
+						<div id="imgdiv">
+							<img id="img" src=""/>
+						</div>
+					</div>
 				</div>
-				<p>It is currently <span id="temp"> </span><span id="temp_measure">&#8457;</span> with <span id="desc"> </span></p>
-				<p>Wind: <span id="wind"></span></p>
-				<input type="button" onclick="toggleTempMeasurement()" value="Toggle &#8451;/&#8457;">
-				<div id="out">hi</div>
+				<div class="col-md-offset-4 col-md-8 text-center weather">
+					<p>It is currently <span id="temp"> </span><span id="temp_measure"> </span> with <span id="desc"> </span></p>
+					<p>Wind: <span id="wind"></span></p>
+					<input type="button" onclick="toggleTempMeasurement()" value="Toggle &#8451;/&#8457;">
 				</div>
-			</div>
 		</div>
 	</div>
 </body>
-
+<script>
+	var current_choice = document.getElementById('temp_measure')
+	current_choice.innerHTML = "&#8457;";
+</script>
 </html>
-Temperature is available in Fahrenheit, Celsius and Kelvin units.
 
 For temperature in Fahrenheit use units=imperial
 For temperature in Celsius use units=metric
