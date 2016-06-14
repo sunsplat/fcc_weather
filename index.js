@@ -1,61 +1,40 @@
-var geocoder;
+var OpenWeatherKey = 'ede211c9afc45826594bb0936d9d5b9c';
 
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+//var City = 'Decatur';
+var City = 'http://freegeoip.net/json/';
+
+function getLocation() {
+		$.ajax({
+			url : City,
+			dataType : "json",
+			success : function(data) {
+				var country =data['country_code'];
+				var region = data['region_code'];
+				var city = data['city'];
+				var latitude = data['latitude'];
+				var longitude = data['longitude'];
+				$('#location').html(city + ', ' + region);
+				var Weather = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&APPID=" + OpenWeatherKey;
+				getWeather(Weather);
+			}
+		});
 }
-// Get the latitude and the longitude;
-function successFunction(position) {
-  var lat = position.coords.latitude;
-  var lng = position.coords.longitude;
-  codeLatLng(lat, lng);
+
+function getWeather(url) {
+	$.ajax({
+		url : url,
+		dataType : "json",
+		success : function(data) {		
+			var temp = data['main']['temp'];
+			var img = data['weather']['icon'];
+			var desc = data['weather']['description'];
+			var wind = data['wind']['speed'];
+			$('#temp').html(temp);
+			$('#desc').html(desc);
+			$('#wind').html(wind);
+		}
+	});
 }
-
-function errorFunction() {
-  alert("Geocoder failed");
-}
-
-function initialize() {
-  geocoder = new google.maps.Geocoder();
-
-}
-
-function codeLatLng(lat, lng) {
-  var latlng = new google.maps.LatLng(lat, lng);
-  geocoder.geocode({latLng: latlng}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      if (results[1]) {
-        var arrAddress = results;
-        console.log(results);
-        $.each(arrAddress, function(i, address_component) {
-          if (address_component.types[0] == "locality") {
-            console.log("City: " + address_component.address_components[0].long_name);
-            itemLocality = address_component.address_components[0].long_name;
-          }
-        });
-      } else {
-        alert("No results found");
-      }
-    } else {
-      alert("Geocoder failed due to: " + status);
-    }
-  });
-}
-var key = 'ede211c9afc45826594bb0936d9d5b9c';
-
-var City = 'Decatur';
-var Weather = "http://api.openweathermap.org/data/2.5/weather?q=" + City + "&APPID=" + key;
-
-$.ajax({
-	url : Weather,
-	dataType : "jsonp",
-	success : function(data) {
-		var location =data['sys']['city'];
-		var temp = data['main']['temp'];
-		var img = data['weather']['icon'];
-		var desc = data['weather']['description'];
-		var wind = data['wind']['speed'];
-	}
-});
 
 
 function toggleTempMeasurement() {
@@ -69,12 +48,9 @@ function toggleTempMeasurement() {
 	}
 }
 
+getLocation();
 
 
-
-
-// //setting the spans to the correct parameters
-// $('#location').html(location);
 // $('#temp').html(temp);
 // $('#desc').html(desc);
 // $('#wind').html(wind);

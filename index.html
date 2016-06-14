@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>Weather in my Town</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -10,20 +12,25 @@
 
   </head>
   <body>
-  <div id="forecast">
-<h1>Weather at <span id="location"> </span></h1>
-<div id="imgdiv">
-<img id="img" src=""/>
-</div>
-<p>It is currently <span id="temp"> </span><span id="temp_measure">&#8457;</span> with <span id="desc"> </span></p>
-<p>Wind: <span id="wind"></span></p>
-<input type="button" onclick="toggleTempMeasurement()" value="Toggle &#8451;/&#8457;">
-<div id="out">hi</div>
-</div>
-  </body>
+  	<div class="container">
+  		<div class="row">
+  			<div class="col-md-offset-2 col-md-8 text-center">
 
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrh7X3UYvgZGtxu2Bz9srFsI9xvfi7OrA"></script>
+				  <div id="forecast">
+				<h1>Weather at <span id="location"> </span></h1>
+				<div id="imgdiv">
+				<img id="img" src=""/>
+				</div>
+				<p>It is currently <span id="temp"> </span><span id="temp_measure">&#8457;</span> with <span id="desc"> </span></p>
+				<p>Wind: <span id="wind"></span></p>
+				<input type="button" onclick="toggleTempMeasurement()" value="Toggle &#8451;/&#8457;">
+				<div id="out">hi</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
 </html>
 Temperature is available in Fahrenheit, Celsius and Kelvin units.
 
