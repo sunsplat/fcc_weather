@@ -1,13 +1,25 @@
-.container {
+@import url(https://fonts.googleapis.com/css?family=Mallanna);
+
+html {
+  font-family: 'Mallanna', sans-serif;
+  font-size: 3em;
+}
+
+.main {
 	margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 .location {
 	background-color: #FAE100;
-	height: 100vh;
+  margin: 0;
+  height: 100vh;
 }
 
 .weather {
 	height: 100vh;
 	background: url('http://www.clipartsfree.net/svg/simple-clouds_Clipart_svg_File.svg');
+  margin: 0;
+  padding: 20px 0;
 }
