@@ -10,22 +10,18 @@ function getWeather(url) {
 		dataType : "json",
 		success : function(data) {		
 			var temp = data['main']['temp'];
-			var img = data['weather']['icon'];
-			var desc = data['weather']['description'];
-			var rain = data['weather']['main'];
+			var img = data['weather'][0]['icon'];
+			var desc = data['weather'][0]['description'];
+			var humidity = data['main']['humidity'];
+			var rain = data['weather'][0]['main'];
       var sunset = new Date((data['sys']['sunset'])*1000);
       sunset = sunset.toString().slice(16,21);
-      //var sunsetOffset = sunset.getTimezoneOffset();
-      // sunset = sunset.toGMTString() +  "<br>"+sunset.toLocaleString());
-      //sunset = sunset.toLocaleString();
-      //var x = new Date();
-      //var date = new Date(x.getTime() - x.getTimezoneOffset() * 60000).toJSON().slice(0,10);
-      //var time = new Date(x.getTime() - x.getTimezoneOffset() * 60000).toJSON().slice(11,16);
+      $('img').id(img);
 			$('#temp').html(temp);
 			$('#desc').html(desc);
 			$('#wind').html(rain);
       $('#sunset').html(sunset + " ");
-      //$('#test').html(date + " " + time);
+      $('#humidity').html(humidity + "%");
 		}
 	});
 }
