@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Weather in my Town</title>
+    <title>Local Weather</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
@@ -17,14 +16,14 @@
         <div class="row">
           <div class="col-md-4 text-center location">
             <div id="forecast">
-              <h1>Weather at <span id="location"> </span></h1>
-              <div id="imgdiv">
-                <img id="img" src=""/>
-              </div>
+              <h1>Weather in <span id="location"> </span></h1>
+              
             </div>
           </div>
-          <div class="col-md-8 text-center weather">
-          	<p><span id="img"></span></p>
+          <div class="col-md-6 text-center weather">
+          	<div id="imgdiv">
+                <img src="" id="image">
+            </div>
             <p>It is currently <span id="temp"> </span><span id="temp_measure"> </span></p>
             <p>Humidity: <span id="humidity"></span></p>
             <p>Sunset is at: <span id="sunset"></span></p>
@@ -33,11 +32,12 @@
           </div>
       </div>
     </div>
+    <div class="footer text-center">
+    	Ellen Sun
+    </div>
 </body>
 <script type="text/javascript">
 	  var current_choice = document.getElementById('temp_measure')
   	current_choice.innerHTML = "&#8457;";
 </script>
 </html>
-
-List of all API parameters with units openweathermap.org/weather-data

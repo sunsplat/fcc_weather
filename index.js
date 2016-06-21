@@ -10,13 +10,14 @@ function getWeather(url) {
 		dataType : "json",
 		success : function(data) {		
 			var temp = data['main']['temp'];
-			var img = data['weather'][0]['icon'];
+			var image = data['weather'][0]['icon'];
 			var desc = data['weather'][0]['description'];
 			var humidity = data['main']['humidity'];
 			var rain = data['weather'][0]['main'];
       var sunset = new Date((data['sys']['sunset'])*1000);
       sunset = sunset.toString().slice(16,21);
-      $('img').id(img);
+     // $('#img').src('http://openweathermap.org/img/w/' + image + ".png");
+     document.getElementById('image').src="http://openweathermap.org/img/w/" + image + ".png";
 			$('#temp').html(temp);
 			$('#desc').html(desc);
 			$('#wind').html(rain);
