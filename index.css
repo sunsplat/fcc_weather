@@ -8,6 +8,8 @@
 body {
 	background: url('http://www.clipartsfree.net/svg/simple-clouds_Clipart_svg_File.svg');
 	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .location {
