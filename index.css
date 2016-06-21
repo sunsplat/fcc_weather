@@ -8,20 +8,34 @@ html {
   font-size: 1em;
 }
 
+body {
+	background: url('http://www.clipartsfree.net/svg/simple-clouds_Clipart_svg_File.svg');
+	background-attachment: fixed;
+}
+
 .main {
 	margin: auto auto;
   padding: 0 20px;
   width: 100%;
-  background: url('http://www.clipartsfree.net/svg/simple-clouds_Clipart_svg_File.svg');
+
 }
 
 .location {
 	display: flex;
 	align-items: center;
   margin: 20px;
-  height: 60vh;
+  height: 90vh;
   background: rgba(255,255,255,0.4);
   border-radius: 5%;
+}
+
+#forecast {
+	margin: auto auto;
+	width: 100%;
+}
+
+#location {
+	font-size: 2em;
 }
 
 .weather {
@@ -29,6 +43,7 @@ html {
   background: rgba(255,255,255,0.4);
   border-radius: 5%;
   height: 90vh;
+  margin: 20px auto;
 }
 
 img {
@@ -42,4 +57,5 @@ img {
 	bottom: 0;
 	left: 0;
 	width: 100%;
+	margin: 0;
 }
