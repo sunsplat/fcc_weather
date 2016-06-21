@@ -16,8 +16,8 @@ function getWeather(url) {
 			var rain = data['weather'][0]['main'];
       var sunset = new Date((data['sys']['sunset'])*1000);
       sunset = sunset.toString().slice(16,21);
-     // $('#img').src('http://openweathermap.org/img/w/' + image + ".png");
-     document.getElementById('image').src="http://openweathermap.org/img/w/" + image + ".png";
+      //$('#image').src('http://openweathermap.org/img/w/' + image + ".png");
+      document.getElementById('image').src="http://openweathermap.org/img/w/" + image + ".png";
 			$('#temp').html(temp);
 			$('#desc').html(desc);
 			$('#wind').html(rain);
