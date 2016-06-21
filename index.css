@@ -1,7 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Mallanna);
-html {
-	height: 100vh;
-}
 
 * {
   font-family: 'Mallanna', sans-serif;
@@ -11,13 +8,16 @@ html {
 body {
 	background: url('http://www.clipartsfree.net/svg/simple-clouds_Clipart_svg_File.svg');
 	background-attachment: fixed;
+
 }
 
 .main {
-	margin: auto auto;
-  padding: 0 20px;
   width: 100%;
+}
 
+.row {
+		display: flex;
+	justify-content: center;
 }
 
 .location {
@@ -53,9 +53,5 @@ img {
 
 .footer {
 	background-color: #FAE100;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	margin: 0;
+
 }
