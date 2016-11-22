@@ -12,8 +12,8 @@ body {
 	background-position: center;
 	background-size: cover;
 	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
 .location {
@@ -22,8 +22,8 @@ body {
 	height: 90vh;
 	margin-top: 10px;
 	margin-bottom: 10px;
-  background: rgba(255,255,255,0.4);
-  border-radius: 5%;
+    background: rgba(255,255,255,0.4);
+    border-radius: 5%;
 }
 
 #forecast {
@@ -41,16 +41,17 @@ body {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	margin-left: 5px;
-  background: rgba(255,255,255,0.4);
-  border-radius: 5%;
-  height: 90vh;
-  font-size: 1.5em;
+    background: rgba(255,255,255,0.4);
+    border-radius: 5%;
+    height: 90vh;
+    font-size: 1.5em;
 }
 
 #weather-content {
 	margin: auto auto;
 	width: 100%;
 }
+
 img {
 	width: 100px;
 	height: 100px;
@@ -58,5 +59,36 @@ img {
 
 .footer {
 	background-color: #FAE100;
+}
 
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 640px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .location {
+      height: 45vh;
+    }
+    
+    .weather {
+      height: auto;
+      padding: 20px;
+    }
+    .footer {
+      display: none;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .location {
+      height: 45vh;
+    }
+    
+    .weather {
+      height: 45vh;
+      padding: 20px;
+    }
 }
