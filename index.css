@@ -6,7 +6,7 @@
 }
 
 body {
-	background-image: url('http://www.clipartsfree.net/svg/simple-clouds_Clipart_svg_File.svg');
+	background-image: url('./simple-clouds_Clipart_svg_File.svg');
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -61,14 +61,14 @@ img {
 	background-color: #FAE100;
 }
 
-@media only screen 
-  and (min-device-width: 320px) 
+@media only screen
+  and (min-device-width: 320px)
   and (max-device-width: 640px)
   and (-webkit-min-device-pixel-ratio: 2) {
     .location {
       height: 45vh;
     }
-    
+
     .weather {
       height: auto;
       padding: 20px;
@@ -78,15 +78,15 @@ img {
     }
 }
 
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
   and (-webkit-min-device-pixel-ratio: 1) {
 
     .location {
       height: 45vh;
     }
-    
+
     .weather {
       height: 45vh;
       padding: 20px;
